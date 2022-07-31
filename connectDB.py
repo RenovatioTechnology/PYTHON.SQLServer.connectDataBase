@@ -4,7 +4,7 @@ mydb = mysql.connector.connect(
     # url for database
     host='localhost',
     user='root',
-    passwd='pwd1235!',
+    passwd='pwd1235',
     database='testdb',
 )
 my_cursor = mydb.cursor()
@@ -19,6 +19,11 @@ my_cursor = mydb.cursor()
 # Create a table, with columns #
 # my_cursor.execute('CREATE TABLE user(name VARCHAR(255), email VARCHAR(255), age INTEGER(10), user_id INTEGER AUTO_INCREMENT PRIMARY KEY)')
 # test above table
-my_cursor.execute('SHOW TABLES')
-for table in my_cursor:
-    print(table)
+# my_cursor.execute('SHOW TABLES')
+#   print(table)
+# Add/ INSERT records into table
+sqlInfo = 'INSERT INTO user (name, email, age) Value (%s, %s, %s)'
+record1 = ('Jeff', 'jeff@renovatio3d.com', 39)
+my_cursor.execute(sqlInfo, record1)
+# commit changes
+mydb.commit()
