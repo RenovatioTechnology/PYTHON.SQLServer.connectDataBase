@@ -17,3 +17,4 @@ for db in my_cursor:
 # Create a table
 my_cursor.execute('CREATE TABLE')
 
+
