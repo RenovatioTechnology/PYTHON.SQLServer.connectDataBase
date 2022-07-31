@@ -18,7 +18,7 @@ my_cursor = mydb.cursor()
 
 # Create a table, with columns #
 # my_cursor.execute('CREATE TABLE user(name VARCHAR(255), email VARCHAR(255), age INTEGER(10), user_id INTEGER AUTO_INCREMENT PRIMARY KEY)')
-# test
+# test above table
 my_cursor.execute('SHOW TABLES')
 for table in my_cursor:
     print(table)
