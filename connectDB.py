@@ -21,9 +21,20 @@ my_cursor = mydb.cursor()
 # test above table
 # my_cursor.execute('SHOW TABLES')
 #   print(table)
-# Add/ INSERT records into table
+
+# Add/ INSERT records into table #
+# sqlInfo = 'INSERT INTO user (name, email, age) Value (%s, %s, %s)'
+# record1 = ('Jeff', 'jeff@renovatio3d.com', 39)
+# my_cursor.execute(sqlInfo, record1)
+# commit changes #
+# mydb.commit()
+
+# INSERT Multiple records into table #
 sqlInfo = 'INSERT INTO user (name, email, age) Value (%s, %s, %s)'
-record1 = ('Jeff', 'jeff@renovatio3d.com', 39)
-my_cursor.execute(sqlInfo, record1)
-# commit changes
+records = [
+    ('Steve', 'steve@yahoo.com', 38),
+    ('Tina', 'tina@aol.com', 21),
+    ('Eric', 'eric@live.com', 37),
+    ('Jessica', 'jessica@gmail.com', 28), ]
+my_cursor.executemany(sqlInfo, records)
 mydb.commit()
