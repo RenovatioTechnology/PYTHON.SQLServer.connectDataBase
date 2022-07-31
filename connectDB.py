@@ -15,6 +15,8 @@ my_cursor.execute('SHOW DATABASES')
 for db in my_cursor:
     print(db[0])
 # Create a table
-my_cursor.execute('CREATE TABLE')
+my_cursor.execute('CREATE TABLE user()')
+
+
 
 
