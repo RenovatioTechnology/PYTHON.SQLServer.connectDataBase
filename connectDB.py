@@ -30,11 +30,17 @@ my_cursor = mydb.cursor()
 # mydb.commit()
 
 # INSERT Multiple records into table #
-sqlInfo = 'INSERT INTO user (name, email, age) Value (%s, %s, %s)'
-records = [
-    ('Steve', 'steve@yahoo.com', 38),
-    ('Tina', 'tina@aol.com', 21),
-    ('Eric', 'eric@live.com', 37),
-    ('Jessica', 'jessica@gmail.com', 28), ]
-my_cursor.executemany(sqlInfo, records)
-mydb.commit()
+# sqlInfo = 'INSERT INTO user (name, email, age) Value (%s, %s, %s)'
+# records = [
+# ('Steve', 'steve@yahoo.com', 38),
+# ('Tina', 'tina@aol.com', 21),
+# ('Eric', 'eric@live.com', 37),
+# ('Jessica', 'jessica@gmail.com', 28), ]
+# my_cursor.executemany(sqlInfo, records)
+# mydb.commit()
+
+# Pulling data from database
+my_cursor.execute('SELECT * FROM user')
+fetchAll = my_cursor.fetchall()
+for row in fetchAll:
+    print(row[0])
