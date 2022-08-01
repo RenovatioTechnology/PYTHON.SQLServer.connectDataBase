@@ -44,7 +44,7 @@ my_cursor.execute('SELECT * FROM user')
 fetchAll = my_cursor.fetchall()
 # Header
 print('NAME\t\tEMAIL\t\tAGE\tID')
-# Diving line
+# Diving linee
 print('____\t\t_____\t\t___\t__')
 for row in fetchAll:
     # Readable report placeholder
