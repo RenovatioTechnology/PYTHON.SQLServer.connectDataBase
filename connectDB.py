@@ -43,4 +43,4 @@ my_cursor = mydb.cursor()
 my_cursor.execute('SELECT * FROM user')
 fetchAll = my_cursor.fetchall()
 for row in fetchAll:
-    print(row[0])
+    print(row)
