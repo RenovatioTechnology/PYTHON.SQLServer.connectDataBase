@@ -42,5 +42,10 @@ my_cursor = mydb.cursor()
 # Pulling data from database
 my_cursor.execute('SELECT * FROM user')
 fetchAll = my_cursor.fetchall()
+# Header
+print('NAME\t\tEMAIL\t\tAGE\tID')
+# Diving line
+print('____\t\t_____\t\t___\t__')
 for row in fetchAll:
-    print(row)
+    # Readable report placeholder
+    print(row[0] + '\t %s' % row[1] + '\t%s' % row[2] + '\t%s' % row[3])
