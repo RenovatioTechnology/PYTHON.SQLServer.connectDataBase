@@ -51,7 +51,15 @@ my_cursor = mydb.cursor()
 #   print(row[0] + '\t %s' % row[1] + '\t%s' % row[2] + '\t%s' % row[3])
 
 # WHERE Clause, finding all specific search
-my_cursor.execute("SELECT * FROM user WHERE name = 'Jeff'")
+# my_cursor.execute("SELECT * FROM user WHERE name = 'Jeff'")
+# my_cursor.execute('SELECT * FROM user WHERE age > 30')
+# fetchAll = my_cursor.fetchall()
+# for row in fetchAll:
+#  print(row)
+
+# LIKE Clause, finding all specific search
+my_cursor.execute("SELECT * FROM user WHERE name LIKE '%i%'")
+# my_cursor.execute("SELECT * FROM user WHERE name LIKE 'J%'")
 # my_cursor.execute('SELECT * FROM user WHERE age > 30')
 fetchAll = my_cursor.fetchall()
 for row in fetchAll:
