@@ -39,13 +39,20 @@ my_cursor = mydb.cursor()
 # my_cursor.executemany(sqlInfo, records)
 # mydb.commit()
 
-# Pulling data from database
-my_cursor.execute('SELECT * FROM user')
-fetchAll = my_cursor.fetchall()
+# Pulling data from database #
+# my_cursor.execute('SELECT * FROM user')
+# fetchAll = my_cursor.fetchall()
 # Header
-print('NAME\t\tEMAIL\t\tAGE\tID')
-# Diving linee
-print('____\t\t_____\t\t___\t__')
+# print('NAME\t\tEMAIL\t\tAGE\tID')
+# Diving line
+# print('____\t\t_____\t\t___\t__')
+# for row in fetchAll:
+# Readable report placeholder
+#   print(row[0] + '\t %s' % row[1] + '\t%s' % row[2] + '\t%s' % row[3])
+
+# WHERE Clause, finding all specific search
+my_cursor.execute("SELECT * FROM user WHERE name = 'Jeff'")
+# my_cursor.execute('SELECT * FROM user WHERE age > 30')
+fetchAll = my_cursor.fetchall()
 for row in fetchAll:
-    # Readable report placeholder
-    print(row[0] + '\t %s' % row[1] + '\t%s' % row[2] + '\t%s' % row[3])
+    print(row)
