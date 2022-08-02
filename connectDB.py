@@ -57,6 +57,7 @@ my_cursor = mydb.cursor()
 # for row in fetchAll:
 #  print(row)
 
+
 # LIKE Clause, finding all specific search
 my_cursor.execute("SELECT * FROM user WHERE name LIKE '%i%'")
 # my_cursor.execute("SELECT * FROM user WHERE name LIKE 'J%'")
