@@ -70,10 +70,30 @@ my_cursor = mydb.cursor()
 #    print(row)
 
 # Updating Record
-my_sql = "UPDATE user SET name = 'Jefferson' WHERE user_id = 10"
+# my_sql = "UPDATE user SET name = 'Jefferson' WHERE user_id = 10"
 # my_sql = "UPDATE user SET age = 13 WHERE user_id = 10"
 # my_sql = "UPDATE user SET age = 39 WHERE name = 'Jeff'"
 # Execute
+# my_cursor.execute(my_sql)
+# Commit the change to mysql, to save it
+# mydb.commit()
+
+# Limiting and Ordering result
+# my_cursor.execute("SELECT * FROM user LIMIT 3")
+# my_cursor.execute("SELECT * FROM user LIMIT 3 OFFSET 1")
+# Arrange Descendants
+# my_cursor.execute("SELECT * FROM user ORDER BY name DESC")
+# Arrange Ascendants
+# my_cursor.execute("SELECT * FROM user ORDER BY name ASC")
+# Arrange by Age
+# my_cursor.execute("SELECT * FROM user ORDER BY age ASC")
+# my_cursor.execute("SELECT * FROM user ORDER BY age DESC")
+# fetchAll = my_cursor.fetchall()
+# for row in fetchAll:
+#    print(row)
+
+# Deleting
+my_sql = "DELETE FROM user WHERE user_id = 10"
 my_cursor.execute(my_sql)
 # Commit the change to mysql, to save it
 mydb.commit()
