@@ -1,10 +1,10 @@
 import mysql.connector
-
+# instance of database
 mydb = mysql.connector.connect(
     # url for database
     host='localhost',
     user='root',
-    passwd='pwd1235',
+    passwd='pwd1235!',
     database='testdb',
 )
 my_cursor = mydb.cursor()
@@ -59,7 +59,9 @@ my_cursor = mydb.cursor()
 
 
 # LIKE Clause, finding all specific search
-my_cursor.execute("SELECT * FROM user WHERE name LIKE '%i%'")
+# my_cursor.execute("SELECT * FROM user WHERE name LIKE '%i%'")
+# using AND, OR
+my_cursor.execute("SELECT * FROM user WHERE name LIKE '%i%' AND age = 39")
 # my_cursor.execute("SELECT * FROM user WHERE name LIKE 'J%'")
 # my_cursor.execute('SELECT * FROM user WHERE age > 30')
 fetchAll = my_cursor.fetchall()
