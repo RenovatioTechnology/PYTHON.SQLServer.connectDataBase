@@ -60,10 +60,20 @@ my_cursor = mydb.cursor()
 
 # LIKE Clause, finding all specific search
 # my_cursor.execute("SELECT * FROM user WHERE name LIKE '%i%'")
-# using AND, OR
-my_cursor.execute("SELECT * FROM user WHERE name LIKE '%i%' AND age = 39")
+# using AND return name with 'e' and age, OR only one has to be true
+# my_cursor.execute("SELECT * FROM user WHERE name LIKE '%e%' OR age = 39")
+# my_cursor.execute("SELECT * FROM user WHERE name LIKE '%e%' AND age = 39")
 # my_cursor.execute("SELECT * FROM user WHERE name LIKE 'J%'")
 # my_cursor.execute('SELECT * FROM user WHERE age > 30')
-fetchAll = my_cursor.fetchall()
-for row in fetchAll:
-    print(row)
+# fetchAll = my_cursor.fetchall()
+# for row in fetchAll:
+#    print(row)
+
+# Updating Record
+my_sql = "UPDATE user SET name = 'Jefferson' WHERE user_id = 10"
+# my_sql = "UPDATE user SET age = 13 WHERE user_id = 10"
+# my_sql = "UPDATE user SET age = 39 WHERE name = 'Jeff'"
+# Execute
+my_cursor.execute(my_sql)
+# Commit the change to mysql, to save it
+mydb.commit()
